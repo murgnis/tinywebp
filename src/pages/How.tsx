@@ -54,9 +54,9 @@ function How() {
         </p>
 
         {/* Embedding YouTube video */}
-        <div className="my-8">
+        <div className="my-8 aspect-video">
           <iframe
-            className="aspect-16/9 w-full h-auto"
+            className="w-full h-full"
             src="https://www.youtube.com/embed/JBz-vB2-Ykg" // Replace with your YouTube video ID
             title="TinyWebP - Convert Images to WebP"
             frameBorder="0"
@@ -67,7 +67,7 @@ function How() {
 
         <h2 className="text-xl font-semibold mt-6 mb-2">5. Additional Information</h2>
         <p>
-          If you have any questions or need further assistance, feel free to reach out to us via email at <a href="mailto:hello@isuru.info" className="text-blue-600 dark:text-blue-400 underline">hello@isuru.info</a>.
+          If you have any questions or need further assistance, feel free to reach out to us via email at <a href="mailto:hello@tinywebp.app" className="text-blue-600 dark:text-blue-400 underline">hello@tinywebp.app</a>.
         </p>
       </div>
 
