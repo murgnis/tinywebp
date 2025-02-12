@@ -35,7 +35,7 @@ function How() {
 
         <h2 className="text-xl font-semibold mt-6 mb-2">1. Upload Your Image</h2>
         <p>
-          Click the "Upload" button and select the image you'd like to compress. No registration or account is needed.
+          Drop your images into the section labeled <strong>"Drop your images here"</strong>, or simply click the <strong>"click to browse"</strong> link and select the image you'd like to compress. No registration or account is needed.
         </p>
 
         <h2 className="text-xl font-semibold mt-6 mb-2">2. Wait for Compression</h2>
@@ -56,8 +56,7 @@ function How() {
         {/* Embedding YouTube video */}
         <div className="my-8">
           <iframe
-            width="560"
-            height="315"
+            className="aspect-16/9 w-full h-auto"
             src="https://www.youtube.com/embed/your-video-id" // Replace with your YouTube video ID
             title="TinyWebP Tutorial"
             frameBorder="0"
