@@ -178,7 +178,7 @@ function App() {
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight">
             WebP Image Converter
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
+          <p className="text-lg text-center text-gray-600 dark:text-gray-300">
             Transform your images to WebP format for superior compression
           </p>
         </div>
@@ -219,18 +219,18 @@ function App() {
                 <div className="absolute inset-0 bg-blue-500/20 blur-xl rounded-full"></div>
                 <Upload className="h-16 w-16 text-blue-500 relative" />
               </div>
-              <h3 className="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
+              <h3 className="mt-6 text-xl text-center font-semibold text-gray-900 dark:text-white">
                 Drop your images here
               </h3>
-              <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+              <p className="mt-2 text-sm text-center text-gray-500 dark:text-gray-400">
                 or click to browse
               </p>
-              <div className="mt-4 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-                <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">JPG</span>
-                <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">PNG</span>
-                <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">GIF</span>
-                <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">TIFF</span>
-                <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">BMP</span>
+              <div className="mt-4 flex items-center gap-2 text-sm text-gray-500 justify-center flex-wrap dark:text-gray-400">
+                <span className="px-1 sm:px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">JPG</span>
+                <span className="px-1 sm:px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">PNG</span>
+                <span className="px-1 sm:px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">GIF</span>
+                <span className="px-1 sm:px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">TIFF</span>
+                <span className="px-1 sm:px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">BMP</span>
               </div>
             </label>
           </div>
@@ -249,12 +249,12 @@ function App() {
           <div className="space-y-6">
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
               <div className="p-6 border-b border-gray-200 dark:border-gray-700">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-center sm:justify-between flex-wrap">
                   <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
                     Converted Images
                   </h2>
-                  <div className="flex items-center gap-4">
-                    <div className="text-sm text-gray-500 dark:text-gray-400">
+                  <div className="flex items-center gap-4 flex-row justify-center sm:flex-col flex-wrap">
+                    <div className="text-sm text-gray-800 dark:text-gray-400">
                       Total space saved: {formatSize(totalSavings)}
                     </div>
                     <button
@@ -283,7 +283,7 @@ function App() {
                     key={index} 
                     className="p-4 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors"
                   >
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-center sm:justify-between flex-wrap">
                       <div className="flex items-center space-x-4">
                         <div className="p-2 bg-gray-100 dark:bg-gray-700 rounded-lg">
                           <ImageIcon className="h-6 w-6 text-gray-500 dark:text-gray-400" />
@@ -334,11 +334,13 @@ function App() {
       {/* Footer */}
       <footer className="mt-auto w-full border-t border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm py-6">
         <div className="max-w-5xl mx-auto px-4 flex items-center justify-center">
-          <p className="text-sm text-gray-800 dark:text-gray-400 flex items-center gap-2">
-            © {new Date().getFullYear()} <a href="https://isuru.info" className="hover:text-blue-500 hover:underline transition-colors">Isuru Prabath</a>
-            <span className="mx-1">•</span>
-            Made with <Heart fill="#f44336" className="w-4 h-4 text-red-500 animate-pulse" /> in
-            <img src={lkFlag} alt='Sri Lanka' className='ml-1 w-5 h-5'/>
+          <p className="text-sm text-gray-800 dark:text-gray-400 flex items-center gap-2 flex-col sm:flex-row">
+            <span>© {new Date().getFullYear()} <a href="https://isuru.info" className="hover:text-blue-500 hover:underline transition-colors">Isuru Prabath</a></span>
+            <span className="mx-1 hidden sm:block">•</span>
+            <span className="mx-1 flex flex-row gap-1 items-center">
+              Made with <Heart fill="#f44336" className="w-4 h-4 text-red-500 animate-pulse" /> in
+              <img src={lkFlag} alt='Sri Lanka' className='ml-1 w-5 h-5'/>
+            </span>
           </p>
         </div>
       </footer>
