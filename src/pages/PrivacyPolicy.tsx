@@ -67,7 +67,7 @@ function PrivacyPolicy() {
           We may update this policy as needed. Continued use of TinyWebP means you agree to the latest version.
         </p>
 
-        <p className="mt-6">For any concerns, contact us at <a href="mailto:hello@isuru.info" className="text-blue-600 dark:text-blue-400 underline">hello@isuru.info</a>.</p>
+        <p className="mt-6">For any concerns, contact us at <a href="mailto:hello@tinywebp.app" className="text-blue-600 dark:text-blue-400 underline">hello@tinywebp.app</a>.</p>
       </div>
 
       {/* Footer */}

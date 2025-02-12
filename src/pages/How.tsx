@@ -57,8 +57,8 @@ function How() {
         <div className="my-8">
           <iframe
             className="aspect-16/9 w-full h-auto"
-            src="https://www.youtube.com/embed/your-video-id" // Replace with your YouTube video ID
-            title="TinyWebP Tutorial"
+            src="https://www.youtube.com/embed/JBz-vB2-Ykg" // Replace with your YouTube video ID
+            title="TinyWebP - Convert Images to WebP"
             frameBorder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
