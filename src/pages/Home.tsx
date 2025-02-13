@@ -44,21 +44,28 @@ function Home() {
         const ctx = canvas.getContext('2d')!;
         ctx.drawImage(img, 0, 0);
         
+        const attemptConversion = (quality: number) => {
         canvas.toBlob(
           (blob) => {
             if (blob) {
-              resolve({
-                originalName: file.name.replace(/\.[^/.]+$/, ''),
-                webpBlob: blob,
-                originalSize: file.size,
-                convertedSize: blob.size,
-              });
+              if(file.size > blob.size){
+                resolve({
+                  originalName: file.name.replace(/\.[^/.]+$/, ''),
+                  webpBlob: blob,
+                  originalSize: file.size,
+                  convertedSize: blob.size,
+                });
+              }else{
+                attemptConversion(quality - 0.1);
+              }
+              
             }
             URL.revokeObjectURL(imageUrl);
           },
           'image/webp',
-          0.8
-        );
+          quality
+        )};
+        attemptConversion(0.8);
       };
       
       img.src = imageUrl;
@@ -82,7 +89,7 @@ function Home() {
   const processFiles = async (files: File[]) => {
     setIsConverting(true);
     const imageFiles = files.filter(file => 
-      ['image/jpeg', 'image/png', 'image/gif', 'image/tiff', 'image/bmp'].includes(file.type)
+      ['image/webp', 'image/avif', 'image/jpeg', 'image/png', 'image/gif', 'image/tiff', 'image/bmp'].includes(file.type)
     );
 
     const converted = await Promise.all(imageFiles.map(convertToWebP));
@@ -186,7 +193,7 @@ function Home() {
           <div className="p-8">
             <input
               type="file"
-              accept="image/jpeg,image/png,image/gif,image/tiff,image/bmp"
+              accept="image/jpeg,image/png,image/gif,image/tiff,image/bmp,image/webp,image/avif"
               multiple
               onChange={handleFileSelect}
               className="hidden"
@@ -218,7 +225,10 @@ function Home() {
                 <span className="px-1 sm:px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">GIF</span>
                 <span className="px-1 sm:px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">TIFF</span>
                 <span className="px-1 sm:px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">BMP</span>
+                <span className="px-1 sm:px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">WEBP</span>
+                <span className="px-1 sm:px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">AVIF *</span>
               </div>
+              <small className='text-xs mt-2 text-gray-400 dark:text-gray-500'>* We are still experimenting with AVIF to WebP compression.</small>
             </label>
             
           </div>
@@ -317,6 +327,10 @@ function Home() {
             </div>
           </div>
         )}
+        <div className='relative mt-8 flex justify-center items-center'>
+                <a className="z-20" href="https://www.producthunt.com/posts/tinywebp?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-tinywebp" target="_blank"><img src={`https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=876487&theme=${theme === "dark" ? "neutral": "light"}&t=1739447984353`} alt="TinyWebP - The&#0032;Fastest&#0044;&#0032;Most&#0032;Privacy&#0045;Focused&#0032;Image&#0032;Compression&#0032;Tool | Product Hunt" width="200" height="43" /></a>
+                <div className='absolute top-0 left-28 inset-0 h-16 w-72 bg-orange-600/20 dark:bg-gray-100/20 blur-xl rounded-full'></div>
+        </div>
       </div>
 
       {/* Footer */}
