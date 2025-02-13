@@ -220,15 +220,15 @@ function Home() {
                 or click to browse
               </p>
               <div className="mt-4 flex items-center gap-2 text-sm text-gray-500 justify-center flex-wrap dark:text-gray-400">
-                <span className="px-1 sm:px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">JPG</span>
-                <span className="px-1 sm:px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">PNG</span>
-                <span className="px-1 sm:px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">GIF</span>
-                <span className="px-1 sm:px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">TIFF</span>
-                <span className="px-1 sm:px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">BMP</span>
-                <span className="px-1 sm:px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">WEBP</span>
-                <span className="px-1 sm:px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">AVIF *</span>
+                <span className="text-xs px-1 sm:px-2 sm:py-1 bg-gray-100 dark:bg-gray-700 rounded">JPG</span>
+                <span className="text-xs px-1 sm:px-2 sm:py-1 bg-gray-100 dark:bg-gray-700 rounded">PNG</span>
+                <span className="text-xs px-1 sm:px-2 sm:py-1 bg-gray-100 dark:bg-gray-700 rounded">GIF</span>
+                <span className="text-xs px-1 sm:px-2 sm:py-1 bg-gray-100 dark:bg-gray-700 rounded">TIFF</span>
+                <span className="text-xs px-1 sm:px-2 sm:py-1 bg-gray-100 dark:bg-gray-700 rounded">BMP</span>
+                <span className="text-xs px-1 sm:px-2 sm:py-1 bg-gray-100 dark:bg-gray-700 rounded">WEBP</span>
+                <span className="text-xs px-1 sm:px-2 sm:py-1 bg-gray-100 dark:bg-gray-700 rounded">AVIF *</span>
               </div>
-              <small className='text-xs mt-2 text-gray-400 dark:text-gray-500'>* We are still experimenting with AVIF to WebP compression.</small>
+              <small className='text-xs text-center mt-2 text-gray-400 dark:text-gray-500'>* We are still experimenting with AVIF to WebP compression.</small>
             </label>
             
           </div>
@@ -287,7 +287,7 @@ function Home() {
                           <ImageIcon className="h-6 w-6 text-gray-500 dark:text-gray-400" />
                         </div>
                         <div>
-                          <p className="font-medium text-gray-900 dark:text-white">
+                          <p className="truncate-middle font-medium text-gray-900 dark:text-white">
                             {image.originalName}.webp
                           </p>
                           <div className="flex items-center mt-1 text-sm">
@@ -329,7 +329,7 @@ function Home() {
         )}
         <div className='relative mt-8 flex justify-center items-center'>
                 <a className="z-20" href="https://www.producthunt.com/posts/tinywebp?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-tinywebp" target="_blank"><img src={`https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=876487&theme=${theme === "dark" ? "neutral": "light"}&t=1739447984353`} alt="TinyWebP - The&#0032;Fastest&#0044;&#0032;Most&#0032;Privacy&#0045;Focused&#0032;Image&#0032;Compression&#0032;Tool | Product Hunt" width="200" height="43" /></a>
-                <div className='absolute top-0 left-28 inset-0 h-16 w-72 bg-orange-600/20 dark:bg-gray-100/20 blur-xl rounded-full'></div>
+                
         </div>
       </div>
 
