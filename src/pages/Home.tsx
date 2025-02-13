@@ -187,8 +187,8 @@ function Home() {
           onDrop={handleDrop}
         >
           
-          <div className='absolute top-[160px] rotate-90 right-[-33px] text-center'>
-            <Link to="https://buymeacoffee.com/iamispra" className={`text-sm text-white px-2 py-1 rounded-tr-lg rounded-tl-lg ${isDragging ? 'bg-red-700' : 'bg-red-700 sm:bg-gray-300 sm:dark:bg-gray-600 hover:bg-red-700 dark:hover:bg-red-800'}`}>Support WebP</Link>
+          <div className='absolute top-[175px] rotate-90 right-[-45.5px] text-center'>
+            <Link to="https://buymeacoffee.com/iamispra" className={`text-sm text-white px-2 py-1 rounded-tr-lg rounded-tl-lg ${isDragging ? 'bg-red-700' : 'bg-red-700 sm:bg-gray-300 sm:dark:bg-gray-600 hover:bg-red-700 dark:hover:bg-red-800'}`}>Support TinyWebP</Link>
           </div>
           <div className="p-8">
             <input
